@@ -64,19 +64,21 @@ def check_force_join(client, message):
 
     try:
         member = client.get_chat_member(channel, message.from_user.id)
-if member.status in ["member", "administrator", "owner"]:
-     return
+        if member.status in ["member", "administrator", "owner"]:
+            return
     except:
         pass
 
     try:
-         message.delete()
+        message.delete()
     except:
         pass
 
     message.reply_text(
-        f"❌ Pehle channel join karo: {channel}\n\n"
-        "Phir yahan message bhejo."
+        f"🚫 **Access Denied!**\n\n"
+        f"👉 Pehle hamara channel join karo:\n"
+        f"🔗 {channel}\n\n"
+        "✅ Join karne ke baad yahan message bhejo."
     )
 
 # ========== RUN ==========
