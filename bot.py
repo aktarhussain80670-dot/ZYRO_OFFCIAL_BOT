@@ -70,7 +70,7 @@ if member.status in ["member", "administrator", "owner"]:
         pass
 
     try:
-        message.delete()
+         message.delete()
     except:
         pass
 
