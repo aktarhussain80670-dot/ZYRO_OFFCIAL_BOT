@@ -64,8 +64,8 @@ def check_force_join(client, message):
 
     try:
         member = client.get_chat_member(channel, message.from_user.id)
-        if member.status in [ChatMemberStatus.MEMBER, ChatMemberStatus.ADMINISTRATOR, ChatMemberStatus.OWNER]:
-            return
+if member.status in ["member", "administrator", "owner"]:
+     return
     except:
         pass
 
